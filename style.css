@@ -55,6 +55,12 @@ and (-webkit-device-pixel-ratio: 3)
 and (orientation: landscape) {
 
 }
+@media print
+{    
+    #listview {
+        display: none !important;
+    }
+}
 
 * {
     margin: 0;
@@ -77,6 +83,7 @@ and (orientation: landscape) {
   
   main {
     background: url(images/background.svg) no-repeat center/cover;
+    -webkit-print-color-adjust: exact;
     width: 100vw;
     min-height: 812px;
     height: 100vh;
@@ -89,6 +96,7 @@ and (orientation: landscape) {
     text-align: center;
   
     color: var(--grey);
+
   }
   
   .avatar {
@@ -111,14 +119,58 @@ and (orientation: landscape) {
   
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
   }
+
+  #listview {
+    max-width: 60%;
+    background-color: var(--bs-gray-900);
+    border-radius: 5px;
+  }
+
+  .container-view{
+    text-align: left;
+    background-color: var(--bs-gray-800);
+    padding-left: 0.8rem;
+    border-radius: 5px;
+    font-size: 10px;
+  }
+  .container-view h3{
+    text-align: left;
+    -webkit-text-stroke: thin;
+}
   
+  .container-view span{
+    color: var(--bs-gray);
+  }
+  .container-view p{
+    text-align: justify;
+    margin-top: 1rem;
+    text-transform: capitalize;
+  }
+  label {
+    font-size: 11px;
+
+  }
   h1 {
     text-align: center;
     font-size: 1.5rem;
     color: var(--grey);
     margin-top: 1.5rem;
   }
-  
+  h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    color: var(--grey);
+    margin-top: 1.5rem;
+  }  
+  h3 {
+    text-align: center;
+    font-size: 1.125rem;
+    color: var(--grey);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    padding-top:0.5rem;
+    text-transform: capitalize;
+  }
   a {
     color: var(--grey);
     text-decoration: none;
@@ -149,4 +201,5 @@ and (orientation: landscape) {
   
     justify-content: center;
   }
+
   
